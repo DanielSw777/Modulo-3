@@ -24,7 +24,7 @@ export const ResetPass = () => {
                     "Content-Type": "application/json; charset=UTF-8"
                 }
             };
-            const data = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/reset-pass/${token}`, params);
+            const data = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/reset-pass/${token}`, params);
             console.log(data);
             window.location.href = "http://localhost:3001/Login";
         } catch (error) {

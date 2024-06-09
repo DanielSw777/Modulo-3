@@ -20,7 +20,7 @@ export const ForgotPass = () => {
                     "Content-Type": "application/json; charset=UTF-8"
                 }
             };
-            const response = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/forgot-pass`, params);
+            const response = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/forgot-pass`, params);
             if (response.ok) {
                 setSuccess(true); // Establecer éxito en true si la respuesta es exitosa
             } else {

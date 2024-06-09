@@ -7,7 +7,7 @@ export const getMeFetch = async (token) => {
             }
         };
 
-        const response = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/admin/me`, params);
+        const response = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/admin/me`, params);
         const results = await response.json();
         if (response.status !== 200) throw response;
         return results;

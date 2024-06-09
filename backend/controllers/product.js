@@ -104,8 +104,8 @@ const getProducts = async (req, res) => {
         const hasNextPage = page < totalPages; // Verificar si hay una página siguiente
         const hasPrevPage = page > 1; // Verificar si hay una página anterior
 
-        const nextPage = hasNextPage ? `https://panificados-patagonia-backend.vercel.app/api/${apiVersion}/products?page=${page + 1}&limit=${limit}` : null;
-        const prevPage = hasPrevPage ? `https://panificados-patagonia-backend.vercel.app/api/${apiVersion}/products?page=${page - 1}&limit=${limit}` : null;
+        const nextPage = hasNextPage ? `https://modulo-3-backend-production.up.railway.app//api/${apiVersion}/products?page=${page + 1}&limit=${limit}` : null;
+        const prevPage = hasPrevPage ? `https://modulo-3-backend-production.up.railway.app//api/${apiVersion}/products?page=${page - 1}&limit=${limit}` : null;
 
         const products = await Product.find()
             .limit(limit)

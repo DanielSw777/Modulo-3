@@ -7,21 +7,14 @@ const app = express();
 
 
 //Configuracion Header HTTP - CORS
-app.use(cors());
-const allowedOrigins = [
-    'https://panificados-pataginia.vercel.app',
-    'https://panificados-patagonia-admin.vercel.app'
-];
-
 app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('No permitido por CORS'));
-        }
-    }
+    origin: [
+        'https://panificados-pataginia.vercel.app',
+        'https://panificados-patagonia-admin.vercel.app'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
 
 //Importar Rutas

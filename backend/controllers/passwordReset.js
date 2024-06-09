@@ -30,7 +30,7 @@ const forgotPassWord = async (req, res) => {
             from: EMAIL,
             to: user.email,
             subject: 'Recuperación de contraseña',
-            html: resetPasswordTemplate.replace('{{ userName }}', user.firstName).replace('{{ resetPasswordLink }}', `http://localhost:3000/ResetPass/${token}`)
+            html: resetPasswordTemplate.replace('{{ userName }}', user.firstName).replace('{{ resetPasswordLink }}', `https://panificados-patagonia-admin.vercel.app/ResetPass/${token}`)
         };
 
         await transporter.sendMail(mailOptions);

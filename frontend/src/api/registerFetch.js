@@ -8,7 +8,7 @@ export const registerFetch = async (data) => {
             }
         };
 
-        const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/auth/register`, params);
+        const response = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/auth/register`, params);
         const request = await response.json();
 
         if (response.status !== 200) return response;

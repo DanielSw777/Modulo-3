@@ -10,7 +10,7 @@ export const addFetchProductCart = async (productId, token) => {
                 Authorization: `Bearer ${token}`
             }
         };
-        const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/cart/addProduct`, params);
+        const response = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/cart/addProduct`, params);
         const result = await response.json();
         return result.append;
     } catch (error) {

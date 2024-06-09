@@ -11,7 +11,7 @@ export const loginFetch = async (data) => {
             }
         };
 
-        const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/auth/login`, params);
+        const response = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/auth/login`, params);
         const request = await response.json();
 
         if (response.status !== 200) throw response;

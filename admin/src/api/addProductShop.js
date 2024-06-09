@@ -8,7 +8,7 @@ export const addProductShop = async (data, token) => {
             }
         };
 
-        const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/product`, params);
+        const response = await fetch(`https://panificados-patagonia-backend.vercel.app/api/v1/product`, params);
         const request = await response.json();
 
         if (response.status !== 201) throw response;

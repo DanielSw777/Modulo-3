@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 const allowedOrigins = [
     'https://panificados-pataginia.vercel.app',
-    'https://panificados-patagonia-admin.vercel.app/'
+    'https://panificados-patagonia-admin.vercel.app'
 ];
 
 app.use(cors({

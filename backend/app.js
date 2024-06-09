@@ -8,7 +8,9 @@ const app = express();
 
 //Configuracion Header HTTP - CORS
 app.use(cors());
-
+app.use(cors({
+    origin: 'https://panificados-pataginia.vercel.app/'
+}));
 //Importar Rutas
 const authAdminRoutes = require("./router/authAdmin");
 const authUserRoutes = require("./router/authUser");

@@ -11,7 +11,7 @@ export const loginFetch = async (data) => {
             }
         };
 
-        const response = await fetch(`http://localhost:8080/api/v1/admin/login`, params);
+        const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/admin/login`, params);
         console.log("RESPONSE: ", response);
         const request = await response.json();
 

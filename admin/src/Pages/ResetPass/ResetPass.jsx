@@ -24,7 +24,7 @@ export const ResetPass = () => {
                     "Content-Type": "application/json; charset=UTF-8"
                 }
             };
-            const data = await fetch(`http://localhost:8080/api/v1/reset-pass/${token}`, params);
+            const data = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/reset-pass/${token}`, params);
             console.log(data);
             window.location.href = "http://localhost:3001/Login";
         } catch (error) {

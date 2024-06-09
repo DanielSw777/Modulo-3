@@ -14,7 +14,7 @@ const CarritoProvider = ({ children }) => {
                     "Authorization": `Bearer ${token}`
                 }
             };
-            const response = await fetch(`http://localhost:8080/api/v1/cart`, params);
+            const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/cart`, params);
             const data = await response.json();
             setProductosCart(data.products);
         } catch (error) {

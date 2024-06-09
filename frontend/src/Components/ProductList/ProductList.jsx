@@ -27,7 +27,7 @@ const ProductList = () => {
 
     // Cuando el componente se monta, cargar los productos
     useEffect(() => {
-        cargarProductos(`http://localhost:8080/api/v1/products`);
+        cargarProductos(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/products`);
     }, []);
 
     const handleNextPage = () => {
@@ -77,7 +77,7 @@ const ProductList = () => {
                     {productos.length > 0 ? (
                         productos.map(producto => (
                             <div className="product-card" key={producto._id}>
-                                <img src={`http://localhost:8080/${producto.image}`} alt={producto.name} />
+                                <img src={`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/${producto.image}`} alt={producto.name} />
                                 <h3 className="product-name">{producto.name}</h3>
                                 <p className="product-price">${producto.price}</p>
                                 <button type='button' className="add-to-cart-btn" onClick={(event) => agregarAlCarrito(event, producto)}>

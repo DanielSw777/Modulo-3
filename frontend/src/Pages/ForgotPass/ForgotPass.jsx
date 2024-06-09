@@ -20,7 +20,7 @@ export const ForgotPass = () => {
                     "Content-Type": "application/json; charset=UTF-8"
                 }
             };
-            const response = await fetch(`http://localhost:8080/api/v1/forgot-pass`, params);
+            const response = await fetch(`https://modulo-3-backend-aj6p2biq3-daniel777.vercel.app/api/v1/forgot-pass`, params);
             if (response.ok) {
                 setSuccess(true); // Establecer éxito en true si la respuesta es exitosa
             } else {

@@ -12,7 +12,7 @@ const Port = process.env.PORT;
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@${dbHost}/`);
+        await mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@${dbHost}//?retryWrites=true&w=majority&appName=Cluster0`);
         console.log("La conexion a la base de datos ha sido Exitosa.!!!");
         app.listen(Port, () => {
             console.log("==================================");

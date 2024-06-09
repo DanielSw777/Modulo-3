@@ -7,7 +7,7 @@ export const deleteProductCart = async (id, token) => {
                 "Authorization": `Bearer ${token}`
             }
         };
-        const response = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/cart/${id}`, params);
+        const response = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/cart/${id}`, params);
         if (response.status !== 200) throw response;
         return response;
     } catch (error) {

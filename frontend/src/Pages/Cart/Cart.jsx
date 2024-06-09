@@ -16,7 +16,7 @@ const Cart = () => {
     const incrementProductCount = async (id) => {
         try {
             const token = localStorage.getItem("access");
-            const response = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/cart/aumentar/${id}`, {
+            const response = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/cart/aumentar/${id}`, {
                 method: "PUT",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -48,7 +48,7 @@ const Cart = () => {
     const decrementProductCount = async (id) => {
         try {
             const token = localStorage.getItem("access");
-            const response = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/cart/disminuir/${id}`, {
+            const response = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/cart/disminuir/${id}`, {
                 method: "PUT",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -126,7 +126,7 @@ const Cart = () => {
             <article key={producto._id} className="main__product" data-id={producto._id}>
                 <div className="main__container-img-title">
                     <div className="main__container-product-img">
-                        <img className="main__product-img" src={`https://modulo-3-backend-production.up.railway.app//${producto.image}`} alt={producto.name} />
+                        <img className="main__product-img" src={`https://modulo-3-backend-production.up.railway.app/${producto.image}`} alt={producto.name} />
                     </div>
                     <div className="main__container-title-trash">
                         <h3 className="main__product-title">{producto.name}</h3>

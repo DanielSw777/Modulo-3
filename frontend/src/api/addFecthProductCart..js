@@ -10,7 +10,7 @@ export const addFetchProductCart = async (productId, token) => {
                 Authorization: `Bearer ${token}`
             }
         };
-        const response = await fetch(`https://modulo-3-backend-production.up.railway.app//api/v1/cart/addProduct`, params);
+        const response = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/cart/addProduct`, params);
         const result = await response.json();
         return result.append;
     } catch (error) {

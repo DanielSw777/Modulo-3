@@ -111,7 +111,7 @@ const ProductForm = ({ onProductAdded }) => {
             </div>
             {selectedFile && (
                 <div>
-                    <p>Archivo seleccionado: {selectedFile.name}</p>
+                    <img src={URL.createObjectURL(selectedFile)} alt="uploadFile" />
                 </div>
             )}
             <button className="submitBtn" type="submit">Agregar Producto</button>

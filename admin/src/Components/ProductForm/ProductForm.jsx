@@ -110,8 +110,8 @@ const ProductForm = ({ onProductAdded }) => {
                     style={{ display: 'none' }} />
             </div>
             {selectedFile && (
-                <div>
-                    <img src={URL.createObjectURL(selectedFile)} alt="uploadFile" />
+                <div className="container-image-preview">
+                    <img className="image-preview" src={URL.createObjectURL(selectedFile)} alt="uploadFile" />
                 </div>
             )}
             <button className="submitBtn" type="submit">Agregar Producto</button>

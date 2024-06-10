@@ -85,3 +85,13 @@ h2 {
     cursor: pointer;
     color: white;
 }
+
+.container-image-preview {
+    width: 10.7rem;
+    height: 10.7rem;
+}
+
+.image-preview {
+    object-fit: cover;
+    object-position: center;
+}

@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Configurar Static Folder
-app.use(express.static("uploads"));
+app.use(express.static(process.env.UPLOADS_DIR));
 
 //Configurar Rutas
 app.use(`/api/${apiVersion}`, authAdminRoutes);

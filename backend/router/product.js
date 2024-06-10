@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const productController = require("../controllers/product");
 const md_authAdmin = require("../middlewares/authenticated");
@@ -5,7 +6,7 @@ const md_authAdmin = require("../middlewares/authenticated");
 const api = express.Router();
 
 const multiparty = require("connect-multiparty");
-const md_upload = multiparty({uploadDir: "./uploads/products"});
+const md_upload = multiparty({ uploadDir: process.env.UPLOADS_DIR });
 
 api.get("/products", productController.getProducts);
 api.post("/product", [md_authAdmin.asureAuthAdmin, md_upload], productController.createProduct);

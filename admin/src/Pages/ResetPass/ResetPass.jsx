@@ -26,7 +26,7 @@ export const ResetPass = () => {
             };
             const data = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/reset-pass/${token}`, params);
             console.log(data);
-            window.location.href = "http://localhost:3001/Login";
+            window.location.href = "https://panificados-pataginia.vercel.app/Login";
         } catch (error) {
             console.log("Error");
         } finally {

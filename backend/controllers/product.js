@@ -18,11 +18,13 @@ const createProduct = async (req, res) => {
     product.stock = params.stock;
 
 
-
+    console.log("IMG: ",req.files.image);
     if (req.files.image) {
         const imagePath = image.getFileName(req.files.image);
         product.image = imagePath;
     }
+
+    console.log(product.image);
 
     try {
         await product.save();

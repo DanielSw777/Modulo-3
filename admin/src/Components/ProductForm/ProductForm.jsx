@@ -31,10 +31,12 @@ const ProductForm = ({ onProductAdded }) => {
                 formData.append('image', selectedFile);
             }
 
+            console.log("FORMDATA: ", formData.get("image"));
+
             const token = localStorage.getItem("accessAdmin");
-
+            console.log("Daniel");
             const product = await addProductShop(formData, token);
-
+            console.log("Edgar");
             onProductAdded(product);
             Swal.fire({
                 title: "Producto Publicado",
@@ -54,7 +56,7 @@ const ProductForm = ({ onProductAdded }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="product-form">
+        <form onSubmit={handleSubmit} className="product-form" encType="multipart/form-data">
             <h2>Agregar Producto</h2>
             <div className="form-group">
                 <label htmlFor="productName">Nombre del Producto:</label>

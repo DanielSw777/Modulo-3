@@ -126,7 +126,7 @@ const Cart = () => {
             <article key={producto._id} className="main__product" data-id={producto._id}>
                 <div className="main__container-img-title">
                     <div className="main__container-product-img">
-                        <img className="main__product-img" src={`https://modulo-3-backend-production.up.railway.app/${producto.image.secure_url}`} alt={producto.name} />
+                        <img className="main__product-img" src={producto.image.secure_url} alt={producto.name} />
                     </div>
                     <div className="main__container-title-trash">
                         <h3 className="main__product-title">{producto.name}</h3>

@@ -71,7 +71,7 @@ const ProductList = () => {
                     {productos.length > 0 ? (
                         productos.map(producto => (
                             <div className="product-card" key={producto._id}>
-                                <img src={`https://modulo-3-backend-production.up.railway.app/${producto.image}`} alt={producto.name} />
+                                <img src={`https://modulo-3-backend-production.up.railway.app/${producto.image.secure_url}`} alt={producto.name} />
                                 <h3 className="product-name">{producto.name}</h3>
                                 <p className="product-price">${producto.price}</p>
                             </div>

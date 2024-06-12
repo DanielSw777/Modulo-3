@@ -22,7 +22,6 @@ const AuthAdminProvider = ({ children }) => {
     const loginAdmin = async (token) => {
         try {
             const UserAdmin = await getMeFetch(token);
-            console.log(UserAdmin);
             setAdmin(UserAdmin);
             setToken(token);
         } catch (error) {
@@ -54,7 +53,6 @@ const AuthAdminProvider = ({ children }) => {
         const handleLoad = () => {
             if (localStorage.getItem("closing") === "true") {
                 localStorage.removeItem("accessAdmin");
-                console.log("Daniel");
             }
             localStorage.removeItem("closing");
         };

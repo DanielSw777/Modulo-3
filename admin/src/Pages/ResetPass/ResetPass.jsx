@@ -9,7 +9,6 @@ export const ResetPass = () => {
 
     const { token } = useParams();
 
-
     const handleSubmitForm = async (event) => {
         event.preventDefault();
         setIsSubmitting(true);
@@ -24,13 +23,12 @@ export const ResetPass = () => {
                     "Content-Type": "application/json; charset=UTF-8"
                 }
             };
-            const data = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/reset-pass/${token}`, params);
-            console.log(data);
+            await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/reset-pass/${token}`, params);
             window.location.href = "https://panificados-pataginia.vercel.app/Login";
         } catch (error) {
             console.log("Error");
         } finally {
-            setIsSubmitting(false); // Restablecer el estado de envío después de completar la solicitud
+            setIsSubmitting(false);
         }
     };
 
@@ -43,7 +41,7 @@ export const ResetPass = () => {
                         <input className="form-reset-input-name" id="mobile-email" type="password" name="password" placeholder="Ingrese su nueva contraseña..." value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <button className="login-btn" type="submit" disabled={isSubmitted}>
-                        {isSubmitting ? 'Redireccionando...' : 'CAMBIAR CONTRASEÑA'} {/* Mostrar texto diferente mientras se envía */}
+                        {isSubmitting ? 'Redireccionando...' : 'CAMBIAR CONTRASEÑA'}
                     </button>
                 </form>
             </main>

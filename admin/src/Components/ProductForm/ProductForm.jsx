@@ -30,13 +30,8 @@ const ProductForm = ({ onProductAdded }) => {
             if (selectedFile) {
                 formData.append('image', selectedFile);
             }
-
-            console.log("FORMDATA: ", formData.get("image"));
-
             const token = localStorage.getItem("accessAdmin");
-            console.log("Daniel");
             const product = await addProductShop(formData, token);
-            console.log("Edgar");
             onProductAdded(product);
             Swal.fire({
                 title: "Producto Publicado",

@@ -79,25 +79,15 @@ const Cart = () => {
 
     const deleteProductFromCart = async (id) => {
         try {
-            // Enviar la solicitud al servidor para eliminar el producto del carrito
             const token = localStorage.getItem("access");
-            const response = await deleteProductCart(id, token);
-            console.log(response);
-
-            // Si la solicitud al servidor se completó con éxito, actualizar el estado del carrito
-            // Buscar el índice del producto en el carrito
+            await deleteProductCart(id, token);
             const index = productosCart.findIndex(producto => producto._id === id);
-
             if (index !== -1) {
-                // Eliminar el producto del array local
                 const newCart = [...productosCart];
                 newCart.splice(index, 1);
-
-                // Actualizar el estado del carrito con la nueva copia
                 setProductosCart(newCart);
             }
         } catch (error) {
-            // Manejar cualquier error que ocurra durante la eliminación del producto
             console.error('Error al eliminar producto del carrito:', error);
         }
     };

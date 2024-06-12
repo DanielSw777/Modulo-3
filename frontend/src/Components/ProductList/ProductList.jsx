@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import './ProductList.css'; // Asegúrate de importar tus estilos CSS
 import { getFetchProducts } from '../../api/getFetchProducts';
 import { addFetchProductCart } from '../../api/addFecthProductCart.';
 import { CarritoContext } from "../../Context/CarritoProvider";
+import './ProductList.css';
 
 const ProductList = () => {
     const { productosCart, setProductosCart } = useContext(CarritoContext);
@@ -10,7 +10,6 @@ const ProductList = () => {
     const [info, setInfo] = useState({});
     const [loading, setLoading] = useState(false);
 
-    // Función para cargar los productos desde los datos importados
     const cargarProductos = async (url) => {
         try {
             setLoading(true);
@@ -19,13 +18,11 @@ const ProductList = () => {
             setInfo(productsData.info);
         } catch (error) {
             console.error('Error al cargar los productos:', error);
-            // Puedes mostrar un mensaje de error en la interfaz del usuario aquí
         } finally {
             setLoading(false);
         }
     };
 
-    // Cuando el componente se monta, cargar los productos
     useEffect(() => {
         cargarProductos(`https://modulo-3-backend-production.up.railway.app/api/v1/products`);
     }, []);
@@ -44,26 +41,21 @@ const ProductList = () => {
     const agregarAlCarrito = async (event, producto) => {
         try {
             event.target.disabled = true;
-            // Verificar si el producto ya está en el carrito
             const productExists = productosCart.some(item => item._id === producto._id);
 
             if (productExists) {
                 console.log('Producto ya está en el carrito');
             } else {
-                // Enviar la solicitud al servidor para agregar el producto al carrito
                 const token = localStorage.getItem("access");
                 const response = await addFetchProductCart(producto._id, token);
 
                 if (response) {
-                    // Si la solicitud al servidor se completa con éxito, actualizar el estado del carrito
                     setProductosCart(prevCart => [...prevCart, { ...producto, quantity: 1 }]);
                 } else {
-                    // Si la solicitud falla, mostrar un mensaje de error y no realizar cambios en el estado
                     console.error('Error al agregar producto al carrito:', 'No se pudo añadir al carrito en el servidor');
                 }
             }
         } catch (error) {
-            // Manejar cualquier error que ocurra durante el proceso
             console.error('Error al agregar producto al carrito:', error);
         }
     };

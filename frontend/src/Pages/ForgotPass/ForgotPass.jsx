@@ -9,8 +9,8 @@ export const ForgotPass = () => {
 
     const handleSubmitForm = async (event) => {
         event.preventDefault();
-        setSuccess(false); // forgotear el estado de éxito antes de la solicitud
-        setIsSubmitting(true); // Indicar que se está enviando el formulario
+        setSuccess(false);
+        setIsSubmitting(true);
         setIsSubmitted(true);
         try {
             const params = {
@@ -22,14 +22,14 @@ export const ForgotPass = () => {
             };
             const response = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/forgot-pass`, params);
             if (response.ok) {
-                setSuccess(true); // Establecer éxito en true si la respuesta es exitosa
+                setSuccess(true);
             } else {
                 throw new Error('Failed to send email');
             }
         } catch (error) {
             console.error("Error:", error);
         } finally {
-            setIsSubmitting(false); // Restablecer el estado de envío después de completar la solicitud
+            setIsSubmitting(false);
         }
     };
 
@@ -46,11 +46,11 @@ export const ForgotPass = () => {
                         placeholder="Ingrese el email correspondiente..."
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        disabled={isSubmitted} // Deshabilitar el input si el formulario se está enviando
+                        disabled={isSubmitted}
                     />
                 </div>
                 <button className="login-btn" type="submit" disabled={isSubmitted}>
-                    {isSubmitting ? 'Enviando...' : 'ENVIAR CÓDIGO'} {/* Mostrar texto diferente mientras se envía */}
+                    {isSubmitting ? 'Enviando...' : 'ENVIAR CÓDIGO'}
                 </button>
             </form>
             {success && <p className="success-message">El código ha sido enviado correctamente a la dirección de correo proporcionada.</p>}

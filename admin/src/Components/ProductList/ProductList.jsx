@@ -6,15 +6,12 @@ import img from '../../images/PANIFICADOS_INTEGRALES-removebg-preview.png'
 import { getFetchProductsAdmin } from '../../api/getFetchProductsAdmin';
 import './ProductList.css';
 
-// Importa los datos del archivo JSON
-
 const ProductList = () => {
     const [productos, setProductos] = useState([]);
     const [info, setInfo] = useState({});
     const [loading, setLoading] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
-    // Función para cargar los productos desde los datos importados
     const cargarProductos = async (url) => {
         try {
             setLoading(true);
@@ -23,13 +20,11 @@ const ProductList = () => {
             setInfo(productsData.info);
         } catch (error) {
             console.error('Error al cargar los productos:', error);
-            // Puedes mostrar un mensaje de error en la interfaz del usuario aquí
         } finally {
             setLoading(false);
         }
     };
 
-    // Cuando el componente se monta, cargar los productos
     useEffect(() => {
         cargarProductos(`https://modulo-3-backend-production.up.railway.app/api/v1/products`);
     }, []);
@@ -39,12 +34,11 @@ const ProductList = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    // Función para manejar la paginación hacia atrás
     const handlePrevPage = () => {
         cargarProductos(info.prev);
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
-    // Función para mostrar u ocultar el formulario
+    
     const handleToggleForm = () => {
         setShowForm(!showForm);
     };
@@ -62,7 +56,7 @@ const ProductList = () => {
                 {showForm ? "Ocultar" : "Agregar Producto"}
             </button>
             <div className="container__form">
-                {showForm && <ProductForm onProductAdded={handleProductAdded}/>}
+                {showForm && <ProductForm onProductAdded={handleProductAdded} />}
             </div>
             {loading ? (
                 <div className="loader"></div>

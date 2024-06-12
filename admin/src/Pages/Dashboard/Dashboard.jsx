@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import Body from '../../Components/Body Section/Body';
 import SideBar from '../../Components/SideBar/SideBar';
-import {AuthAdminContext} from "../../Context/AuthAdminContext";
+import { AuthAdminContext } from "../../Context/AuthAdminContext";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -10,7 +10,6 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(admin);
         if (!admin) {
             navigate("/");
         }

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
-import './Register.css';
-
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../images/PANIFICADOS_INTEGRALES-removebg-preview.png'
+import './Register.css';
 
 const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState({
@@ -10,7 +9,7 @@ const Register = () => {
         confirm: false
     });
 
-    const navigate = useNavigate(); // Obtén la función navigate para redirigir al usuario
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = (type) => {
         setPasswordVisible(prevState => ({
@@ -25,8 +24,6 @@ const Register = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Aquí puedes agregar la lógica para manejar el envío del formulario
-        // Después de que se haya registrado correctamente, redirige al usuario al dashboard
         navigate('/dashboard');
     };
 

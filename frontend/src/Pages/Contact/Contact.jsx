@@ -2,7 +2,7 @@ import React from "react";
 import './Contact.css'
 class Contact extends React.Component {
     render() {
-        const validateForm = ()=>{};
+        const validateForm = () => { };
         return (
             <main className="contact-main">
                 <div className="contacto-info">

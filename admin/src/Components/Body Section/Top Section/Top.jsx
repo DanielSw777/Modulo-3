@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Top = () => {
 
-    const { admin, setAdmin } = useContext(AuthAdminContext);
+    const { setAdmin } = useContext(AuthAdminContext);
     const navigate = useNavigate();
 
     const logOut = () => {

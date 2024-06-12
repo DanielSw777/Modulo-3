@@ -12,7 +12,6 @@ export const loginFetch = async (data) => {
         };
 
         const response = await fetch(`https://modulo-3-backend-production.up.railway.app/api/v1/admin/login`, params);
-        console.log("RESPONSE: ", response);
         const request = await response.json();
 
         if (response.status !== 200) throw response;

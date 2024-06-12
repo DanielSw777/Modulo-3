@@ -21,7 +21,7 @@ const Login = () => {
     }, [admin]);
 
     const handleLogin = async (event) => {
-        event.preventDefault(); // Evita que el formulario se envíe por defecto
+        event.preventDefault();
 
         const validationError = validateLoginForm(email, password);
         if (validationError) {
@@ -30,7 +30,6 @@ const Login = () => {
             setError("");
             try {
                 const { accessAdmin } = await loginFetch({ email, password });
-                console.log("Daniel", accessAdmin);
                 loginAdmin(accessAdmin);
                 localStorage.setItem("accessAdmin", accessAdmin);
                 setError("");

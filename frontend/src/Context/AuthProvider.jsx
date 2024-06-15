@@ -53,7 +53,6 @@ const AuthProvider = ({ children }) => {
         const handleLoad = () => {
             if (localStorage.getItem("closing") === "true") {
                 localStorage.removeItem("access");
-                console.log("Daniel");
             }
             localStorage.removeItem("closing");
         };
